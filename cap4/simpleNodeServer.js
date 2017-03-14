@@ -5,6 +5,10 @@ var http = require('http');
 // Create a node-static server instance listening on port 8080
 var file = new(static.Server)();
 var port = process.argv[2]||8080 ;
+if (isNaN(port)){
+    console.log('ERROR: Port must be a number');
+    process.exit();
+}
 console.log("Listening on port " + port);
 
 
