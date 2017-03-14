@@ -4,12 +4,15 @@ var http = require('http');
 
 // Create a node-static server instance listening on port 8080
 var file = new(static.Server)();
+var port = process.argv[2]||8080 ;
+console.log("Listening on port " + port);
+
 
 // We use the http module’s createServer function and
 // use our instance of node-static to serve the files
 var app = http.createServer(function (req, res) {
   file.serve(req, res);
-}).listen(8080);
+}).listen(port);
 
 // Use socket.io JavaScript library for real-time web applications
 var io = require('socket.io').listen(app);
