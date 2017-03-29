@@ -2,7 +2,7 @@
 div = document.getElementById('scratchPad');
 
 //Connect to server
-var socket = io.connect('http://localhost:8080');
+var socket = io.connect('http://localhost:'+location.port);
 
 //Ask channel name from user
 channel = prompt("Enter signalling channel name:");
